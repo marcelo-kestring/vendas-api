@@ -7,18 +7,17 @@ Este repositório contém a implementação do backend para a API de Vendas da e
 A estrutura de pastas do projeto é a seguinte:
 
 
-vendas-api/
-└── VendasAPISolution/
-    ├── VendasAPIBackend/
-    │   ├── Backend/
-    │   └── BackendTests/
-    └── Frontend/ (futuramente)
+- vendas-api/
+  - VendasAPISolution/
+    - VendasAPIBackend/
 
+Sendo assim, as pastas internas VendasAPIBackend tem a seguinte separação e propósitos:
 
 - **VendasAPIBackend**: Contém a implementação do backend da API de Vendas.
   - **Backend**: Código fonte principal do backend, incluindo controladores, serviços, repositórios e entidades de domínio.
   - **BackendTests**: Contém testes unitários e de integração para o backend.
-- **Frontend**: (futuramente) Implementação do frontend em Angular para interagir com a API.
+  - **Frontend**: (futuramente) Implementação do frontend em Angular para interagir com a API.
+
 
 ## Tecnologias Utilizadas
 
@@ -34,39 +33,38 @@ vendas-api/
 ### Pré-requisitos
 
 - **.NET 6 SDK**: Certifique-se de que o .NET 6 SDK está instalado em sua máquina.
+- **Visual Studio 2022**: Certifique-se de ter o Visual Studio 2022 instalado com as cargas de trabalho do .NET.
 
-### Executando o Backend
+### Executando o Backend no Visual Studio
 
 1. **Clone o Repositório**:
-   ```bash
-   git clone https://github.com/SEU_USUARIO/vendas-api.git
-   cd vendas-api/VendasAPISolution/VendasAPIBackend
+   - Abra o Visual Studio.
+   - Selecione **"Clone a repository"** na tela inicial.
+   - Insira a URL do repositório: `https://github.com/SEU_USUARIO/vendas-api.git` e clique em **"Clone"**.
 
-Restaurar Dependências:
+2. **Abrir a Solução**:
+   - Navegue até a pasta `vendas-api/VendasAPISolution` e abra o arquivo `VendasAPISolution.sln`.
 
-dotnet restore
+3. **Restaurar Dependências**:
+   - No Visual Studio, vá para **"Build" > "Restore NuGet Packages"** para restaurar todas as dependências do projeto.
 
+4. **Executar o Backend**:
+   - No **Solution Explorer**, clique com o botão direito no projeto `VendasAPIBackend` e selecione **"Set as Startup Project"**.
+   - Pressione **F5** ou clique em **"Start"** para compilar e executar o projeto. Isso iniciará o servidor e a API estará disponível para receber requisições.
 
-Executar o Backend:
+### Verificando a Execução da Aplicação
 
-dotnet run --project Backend
+- **Swagger UI**: Após iniciar a aplicação, abra um navegador da web e acesse `http://localhost:5000/swagger` (ou a porta configurada) para acessar a interface do Swagger. O Swagger fornece uma interface gráfica para visualizar e testar os endpoints da API.
+- **Testando Endpoints**: Use o Swagger para enviar requisições aos endpoints e verificar se estão funcionando conforme esperado. Você pode testar operações CRUD, como criar, ler, atualizar e excluir vendas.
 
-Executando os Testes
+### Executando os Testes no Visual Studio
 
-Testes Unitários:
+1. **Testes Unitários e de Integração**:
+   - Abra o **Test Explorer** no Visual Studio (**"Test" > "Test Explorer"**).
+   - Clique em **"Run All"** para executar todos os testes.
+   - Para executar testes específicos, selecione-os no **Test Explorer** e clique em **"Run"**.
 
-dotnet test BackendTests --filter "Category=Unit"
+## Futuras Implementações
 
+- **Frontend Angular**: Será desenvolvido para interagir com o backend e fornecer uma interface de usuário.
 
-Testes de Integração:
-
-dotnet test BackendTests --filter "Category=Integration"
-
-Futuras Implementações
-
-Frontend Angular: Será desenvolvido para interagir com o backend e fornecer uma interface de usuário.
-
-
-### Conclusão
-
-Este `README.md` fornece uma visão geral clara do projeto, incluindo sua estrutura, tecnologias utilizadas, e instruções de configuração e execução. Isso deve ajudar outros desenvolvedores a entenderem rapidamente o projeto e começarem a trabalhar com ele. Se precisar de mais assistência ou ajustes, estou à disposição para ajudar!
